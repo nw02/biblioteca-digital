@@ -44,6 +44,45 @@ public class ListaDupla {
         return copia;
     }
 
+    public Livro buscarPorIsbn(String isbn){
+        if(estaVazia()) return null;
+        NoDuplo runner = primeiro;
+        while(!runner.getLivro().getIsbn().equals(isbn)){
+            if(runner.getProximo() == null) return null;
+            runner = (NoDuplo)runner.getProximo();
+        }
+        return runner.getLivro();
+    }
+
+    public void listarDoInicio(){
+        if (estaVazia()){ System.out.println("[]"); return;}
+        NoDuplo runner = primeiro;
+        while (runner != null){
+            System.out.println(runner.toString());
+            runner = (NoDuplo)runner.getProximo();
+        }
+    }
+
+    public void listarDoFim(){
+        if (estaVazia()){ System.out.println("[]"); return;}
+        NoDuplo runner = ultimo;
+        while (runner != null){
+            System.out.println(runner.toString());
+            runner = (NoDuplo)runner.getAnterior();
+        }
+    }
+
+    public int tamanho(){
+        if (estaVazia()) return 0;
+        int i=0;
+        NoDuplo runner = primeiro;
+        while (runner != null){
+            i +=1;
+            runner = (NoDuplo)runner.getProximo();
+        }
+        return i;
+    }
+
     private boolean estaVazia(){
         return primeiro == null;
     }
