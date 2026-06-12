@@ -33,7 +33,7 @@ public class TesteListaDupla {
         System.out.println("\n>> Buscando livro por ISBN (222-22):");
         Livro encontrado = lista.buscarPorIsbn("222-22");
         if (encontrado != null) {
-            System.out.println("Sucesso! Livro encontrado: " + encontrado.toString());
+            System.out.println("Sucesso! Livro encontrado: " + encontrado);
         } else {
             System.out.println("Falha: Livro não encontrado.");
         }

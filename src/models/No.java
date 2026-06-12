@@ -1,26 +1,31 @@
 package models;
 
-public class No {
-    private Livro livro;
-    private No proximo;
-    public No(Livro livro) {
-        this.livro = livro;
+public class No<T> {
+    private T info;
+    private No<T> proximo;
+
+    public No(T info) {
+        this.info = info;
     }
 
     @Override
     public String toString(){
-        return livro.toString();
+        return "["+info+"]";
     }
 
-    public void setProximo(No proximo) {
-        this.proximo = proximo;
+    public T getInfo() {
+        return info;
     }
 
-    public Livro getLivro() {
-        return livro;
+    public void setInfo(T info) {
+        this.info = info;
     }
 
-    public No getProximo() {
+    public No<T> getProximo() {
         return proximo;
+    }
+
+    public void setProximo(No<T> proximo) {
+        this.proximo = proximo;
     }
 }

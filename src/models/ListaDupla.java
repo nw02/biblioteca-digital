@@ -25,7 +25,7 @@ public class ListaDupla {
     public Livro removePrimeiro(){
         if(estaVazia()) return null;
         Livro copia = primeiro.getLivro();
-        primeiro = (NoDuplo)primeiro.getProximo();
+        primeiro = primeiro.getProximo();
         if(primeiro == null)
             ultimo = null;
         else
@@ -49,7 +49,7 @@ public class ListaDupla {
         NoDuplo runner = primeiro;
         while(!runner.getLivro().getIsbn().equals(isbn)){
             if(runner.getProximo() == null) return null;
-            runner = (NoDuplo)runner.getProximo();
+            runner = runner.getProximo();
         }
         return runner.getLivro();
     }
@@ -58,8 +58,8 @@ public class ListaDupla {
         if (estaVazia()){ System.out.println("[]"); return;}
         NoDuplo runner = primeiro;
         while (runner != null){
-            System.out.println(runner.toString());
-            runner = (NoDuplo)runner.getProximo();
+            System.out.println(runner);
+            runner = runner.getProximo();
         }
     }
 
@@ -67,8 +67,8 @@ public class ListaDupla {
         if (estaVazia()){ System.out.println("[]"); return;}
         NoDuplo runner = ultimo;
         while (runner != null){
-            System.out.println(runner.toString());
-            runner = (NoDuplo)runner.getAnterior();
+            System.out.println(runner);
+            runner = runner.getAnterior();
         }
     }
 
@@ -78,7 +78,7 @@ public class ListaDupla {
         NoDuplo runner = primeiro;
         while (runner != null){
             i +=1;
-            runner = (NoDuplo)runner.getProximo();
+            runner = runner.getProximo();
         }
         return i;
     }
