@@ -17,8 +17,13 @@ public class ListaDupla {
 
     public void insereFim(Livro livro){
         NoDuplo novo = new NoDuplo(livro);
-        ultimo.setProximo(novo);
-        novo.setAnterior(ultimo);
+
+        if(estaVazia()) {
+            primeiro = novo;
+        } else {
+            ultimo.setProximo(novo);
+            novo.setAnterior(ultimo);
+        }
         ultimo = novo;
     }
 

@@ -20,7 +20,7 @@ public class NossoHash<K, V> {
             tabela[posicao] = new Entrada<>(key, value);
             return;
         }
-        Entrada<K,V> runner = new Entrada<>(key, value);
+        Entrada<K,V> runner = tabela[posicao];
         while(runner != null){
             if(runner.key.equals(key)){
                 runner.value = value;

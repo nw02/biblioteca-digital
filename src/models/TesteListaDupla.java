@@ -8,9 +8,9 @@ public class TesteListaDupla {
         ListaDupla lista = new ListaDupla();
 
         // Criando instâncias de livros
-        Livro livro1 = new Livro("111-11", "Java Como Programar", "Deitel", 2015);
-        Livro livro2 = new Livro("222-22", "Estruturas de Dados", "Goodrich", 2013);
-        Livro livro3 = new Livro("333-33", "Clean Code", "Robert C. Martin", 2008);
+        Livro livro1 = new Livro("1111", "Java Como Programar", "Deitel", 2015);
+        Livro livro2 = new Livro("2222", "Estruturas de Dados", "Goodrich", 2013);
+        Livro livro3 = new Livro("3333", "Clean Code", "Robert C. Martin", 2008);
 
         //Teste inserções no início e no fim 
         System.out.println("\n>> Inserindo livros no acervo...");
@@ -39,8 +39,8 @@ public class TesteListaDupla {
         }
 
         //Testa a busca por ISBN inexistente 
-        System.out.println("\n>> Buscando livro inexistente (999-99):");
-        Livro naoEncontrado = lista.buscarPorIsbn("999-99");
+        System.out.println("\n>> Buscando livro inexistente (9999):");
+        Livro naoEncontrado = lista.buscarPorIsbn("9999");
         if (naoEncontrado == null) {
             System.out.println("Sucesso! O sistema retornou null como esperado.");
         } else {
